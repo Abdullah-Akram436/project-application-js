@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIGNUP</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="container">
+        <h1 class="">Login</h1>
+        <div class="main_btn">
+            <button onclick="login()">Login</button>
+            <button class="active" onclick="signup()">Signup</button>
+        </div>
+    <form onsubmit="register(); return false">
+          <input type="text" id="Name" placeholder="Name" required>
+          <input type="email" id="Email" placeholder="Email" required>
+          <input type="number" id="Number" placeholder="Phone Number" required minlength="11" maxlength="11">
+          <input type="password" id="Password" placeholder="Password" required>
+        <p>Already have an account <a onclick="login()">login</a></p>
+        <button type="submit" class="submit">Sign up</button>
+      </form>
+    </section>
+</body>
+<script src="app.js"></script>
+</html>
