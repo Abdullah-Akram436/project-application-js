@@ -74,3 +74,31 @@ function del(id, e){
 
     e.parentNode.parentNode.remove()
 }
+
+
+function edit(id, e) {
+    var indexNum;
+    var getPosts = JSON.parse(localStorage.getItem("posts"))
+    var post = getPosts.find(function (value, index) {
+        if (value.id === id) {
+            indexNum = index
+            return true
+        }
+    })
+    var editTitle = prompt("Edit title", post.title)
+    var editDesc = prompt("Edit description", post.description)
+    const editObj = {
+        id: post.id,
+        title: editTitle,
+        description: editDesc
+    }
+    getPosts.splice(indexNum, 1, editObj)
+    localStorage.setItem("posts", JSON.stringify(getPosts))
+
+    var h5Title = e.parentNode.parentNode.parentNode
+    var pDesc = e.parentNode.parentNode
+    h5Title.innerHTML = editTitle
+    pDesc.innerHTML = editDesc
+
+
+}
